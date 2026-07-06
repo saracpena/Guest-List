@@ -16,8 +16,100 @@ main {
 }
 
 h1 {
-  font-size: 3rem;
-  letter-spacing: 0.08em;
+  color: #ffd54f;
+  text-align: center;
+  font-size: 3.25rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+
+  text-shadow:
+    2px 2px 0 #111827,
+    0 0 18px rgba(255, 193, 7, 0.45);
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 180px;
+  height: 5px;
+  margin: 0.75rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff7a18, #ffd54f, #7f00ff);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+th,
+td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+}
+
+th {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fde68a;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+}
+
+tbody tr {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: scale(1.01);
+}
+
+td {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+h2 {
+  font-size: 2rem;
+  color: #fde68a;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+button {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 12px;
+
+  background: #f5c242;
+  color: #1f2937;
+
+  font: inherit;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #ffd54f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245, 194, 66, 0.35);
+}
+
+.guest-card {
+  padding: .5rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
 }

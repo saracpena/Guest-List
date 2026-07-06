@@ -49,7 +49,9 @@ export default function App() {
 if (selectedGuest) {
   return (
     <main>
+      <section className="guest-card">
       <h1>Guest Details</h1>
+      </section>
 
       <h2>{selectedGuest.name}</h2>
       <p>Email: {selectedGuest.email}</p>
@@ -58,7 +60,7 @@ if (selectedGuest) {
       <p>Job: {selectedGuest.job}</p>
 
       <button onClick={() => setSelectedGuestId(null)}>
-        Back
+      ← Back to Guest List
       </button>
     </main>
   );
