@@ -9,6 +9,7 @@ export default function App() {
   const [selectedGuestId, setSelectedGuestId] = useState(null);
   const [selectedGuest, setSelectedGuest] = useState(null);
   
+  /**Fetch ALL Guests */
   useEffect(() => {
     const fetchGuests = async () => {
       try {
@@ -23,6 +24,27 @@ export default function App() {
   
     fetchGuests();
   }, []);
+
+  /**Fetch Selected Guest */
+  useEffect(() => {
+    if (!selectedGuestId) {
+      setSelectedGuest(null);
+      return;
+    }
+    const fetchSelectedGuest = async () => {
+      try {
+        const { data } = await axios.get(`${API}/${selectedGuestId}`);
+        setSelectedGuest(data.data);
+      } catch (error) {
+        console.error("Error fetching selected guest:", error);
+      }
+    };
+
+    fetchSelectedGuest();
+  }, [selectedGuestId]);
+
+  /** Display Selected Guest */
+  if (selectedGuest) {
   return (
   <main>
   <div className="App">
@@ -51,4 +73,4 @@ export default function App() {
     </div>  
   </main>
   );
-}
+}}
