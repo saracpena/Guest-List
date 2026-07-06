@@ -8,3 +8,16 @@ body {
   color: #f9fafb;
   min-height: 100vh;
 }
+
+main {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
