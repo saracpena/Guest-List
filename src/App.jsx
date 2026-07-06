@@ -54,10 +54,10 @@ if (selectedGuest) {
       </section>
 
       <h2>{selectedGuest.name}</h2>
-      <p>Email: {selectedGuest.email}</p>
-      <p>Phone: {selectedGuest.phone}</p>
-      <p>Bio: {selectedGuest.bio}</p>
-      <p>Job: {selectedGuest.job}</p>
+      <p> <span className="label">Email:</span> {selectedGuest.email}</p>
+      <p> <span className="label">Phone:</span> {selectedGuest.phone}</p>
+      <p> <span className="label">Bio:</span> {selectedGuest.bio}</p>
+      <p> <span className="label">Job:</span> {selectedGuest.job}</p>
 
       <button onClick={() => setSelectedGuestId(null)}>
       ← Back to Guest List
