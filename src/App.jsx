@@ -7,8 +7,9 @@ const [selectedGuest, setSelectedGuest] = useState([]);
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/guests");
-      const { data } = await response.json();
+      /* const response = await fetch("http://localhost:3000/guests");
+         const { data } = await response.json();*/
+      const {data} = await axios.get("http://localhost:3000/guests");
       setGuests(data);
     } catch (error) {
       console.error("Error fetching guests:", error);
