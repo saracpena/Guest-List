@@ -6,8 +6,8 @@ const API = "https://fsa-crud-2aa9294fe819.herokuapp.com/api/COHORT_CODE/guests"
 
 export default function App() {
   const [guests, setGuests] = useState([]);
-  const [selectedGuestId, setSelectedGuestId] = useState([]);
-  const [selectedGuest, setSelectedGuest] = useState([]);
+  const [selectedGuestId, setSelectedGuestId] = useState(null);
+  const [selectedGuest, setSelectedGuest] = useState(null);
   
   useEffect(() => {
     const fetchGuests = async () => {
@@ -27,13 +27,27 @@ export default function App() {
   <main>
   <div className="App">
       <h1>Guest List</h1>
-      <ul>
+<table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+
+      <tbody>
         {guests.map((guest) => (
-          <li key={guest.id}>
-            {guest.name} - {guest.email}
-          </li>
+          <tr
+            key={guest.id}
+            onClick={() => setSelectedGuestId(guest.id)}
+            style={{ cursor: "pointer" }}
+          >
+            <td>{guest.name}</td>
+            <td>{guest.email}</td>
+          </tr>
         ))}
-      </ul>
+      </tbody>
+    </table>
     </div>  
   </main>
   );
